@@ -13,7 +13,7 @@ from calendar import Calendar
 from datetime import date, timedelta
 
 from convertdate.islamic import from_gregorian, to_gregorian
-from holidays import MONDAY, WEEKEND, HolidayBase, easter, rd
+from holidays import MON, WEEKEND, HolidayBase, easter, rd
 from lunardate import LunarDate
 
 
@@ -504,7 +504,7 @@ class Malaysia(HolidayBase):
         # 2017-2021: last Saturday of July
         name = "King's birthday"
         if year < 2017:
-            c = Calendar(firstweekday=MONDAY)
+            c = Calendar(firstweekday=MON)
             monthcal = c.monthdatescalendar(year, 6)
 
             l1 = len(monthcal)
@@ -514,7 +514,7 @@ class Malaysia(HolidayBase):
                     saturdays.append(monthcal[i][5])
             self[saturdays[0]] = name
         elif (year >= 2017) and (year <= 2021):
-            c = Calendar(firstweekday=MONDAY)
+            c = Calendar(firstweekday=MON)
             monthcal = c.monthdatescalendar(year, 7)
 
             l1 = len(monthcal)
